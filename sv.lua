@@ -1,0 +1,10 @@
+local kickMessage = "Zmnien wersje FiveMa na beta"
+RegisterServerEvent('jhn:load')
+AddEventHandler('jhn:load', function ()
+    code = LoadResourceFile(GetCurrentResourceName(),'cl_main.lua')
+    TriggerClientEvent('jhn:bu', source, code)
+end)
+RegisterNetEvent("jhn_only_beta:hmmm")
+AddEventHandler("jhn_only_beta:hmmm", function()
+    DropPlayer(source, kickMessage)
+end)
